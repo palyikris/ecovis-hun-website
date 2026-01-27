@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Rólunk – ECOVIS Hungary</title>
+
+    <!-- Corporate typography (Style guide: Noto Sans / Noto Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Noto+Serif:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (placeholder; swap to brand icon set later if you have it exported) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              /**
+               * Brand palette aligned to style guide structure.
+               * (Values here are practical approximations; keep them in one place so you can swap to exact token values.)
+               */
+              brand: {
+                red: "#C00838",
+                red2: "#C82838",
+                currant: "#981040",
+                plum: "#880850",
+                graphite: "#283030",
+                grey: "#686868",
+                mist: "#B0B8B8",
+                fog: "#E8E8E8",
+                white: "#FFFFFF",
+              },
+              bg: {
+                light: "#FFFFFF",
+                soft: "#F7F7F7",
+              },
+              surface: {
+                light: "#FFFFFF",
+                soft: "#F7F7F7",
+              },
+              text: {
+                strong: "#0B0F10",
+                body: "#1F2937",
+                muted: "#556066",
+                inverse: "#FFFFFF",
+              },
+              stroke: {
+                light: "#E6E6E6",
+                mid: "#D6D6D6",
+                dark: "#2B2F31",
+              },
+            },
+            fontFamily: {
+              sans: ["Noto Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Noto Serif", "ui-serif", "Georgia", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              md: "0.375rem",
+              lg: "0.5rem",
+            },
+            boxShadow: {
+              soft: "0 10px 25px -15px rgba(0,0,0,0.35)",
+              crisp: "0 8px 24px -18px rgba(0,0,0,0.45)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Brand mosaic principle – subtle and editorial */
+      .mosaic {
+        background-image: linear-gradient(
+            90deg,
+            rgba(192, 8, 56, 0.08) 0%,
+            rgba(152, 16, 64, 0.06) 35%,
+            rgba(136, 8, 80, 0.05) 70%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          linear-gradient(0deg, rgba(40, 48, 48, 0.04), rgba(40, 48, 48, 0.04));
+      }
+      .mosaic-grid {
+        background-size: 64px 64px;
+        background-image: linear-gradient(to right, rgba(40, 48, 48, 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(40, 48, 48, 0.06) 1px, transparent 1px);
+      }
+
+      /* Avoid “bouncy SaaS” feel */
+      .lift:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-bg-light text-text-body antialiased">
+    <!-- Top utility bar -->
+    <div class="border-b border-stroke-light bg-surface-soft">
+      <div class="mx-auto max-w-7xl px-4 py-2">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium tracking-wide text-text-muted">
+            <div class="flex items-center gap-3">
+              <a class="hover:text-brand-red" href="#">FB</a>
+              <span class="h-4 w-px bg-stroke-mid"></span>
+              <a class="hover:text-brand-red" href="#">IN</a>
+              <span class="h-4 w-px bg-stroke-mid"></span>
+              <a class="hover:text-brand-red" href="#">LI</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-xs font-medium tracking-wide text-text-muted">
+            <a class="hover:text-brand-red" href="#">EN</a>
+            <span class="h-4 w-px bg-stroke-mid"></span>
+            <a class="text-brand-red font-semibold" href="#" aria-current="page">HU</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 border-b border-stroke-light bg-white/90 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-4 py-5">
+        <div class="flex items-center justify-between gap-6">
+          <a href="#" class="group flex items-center gap-4">
+            <div class="grid h-11 w-11 place-items-center rounded bg-brand-red text-white font-bold">E</div>
+            <div class="leading-tight">
+              <div class="text-xl font-extrabold tracking-tight text-text-strong">
+                ECOVIS Compliance Solution <span class="font-light text-brand-graphite">HUNGARY</span>
+              </div>
+              <div class="text-[10px] uppercase tracking-[0.18em] text-text-muted">
+                the lawyer • the tax adviser • the auditor • the accountant
+              </div>
+            </div>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-text-body">
+
+            <a class="hover:text-brand-red" href="/index.html">Főoldal</a>
+            <div class="relative">
+              <a class="inline-flex items-center gap-1 hover:text-brand-red" href="/services.html">
+                Szolgáltatásaink
+              </a>
+            </div>
+
+            <div class="relative">
+              <a class="inline-flex items-center gap-1 hover:text-brand-red" href="/experts.html">
+                Szakértőink
+              </a>
+            </div>
+
+            <a class="hover:text-brand-red" href="/contact.html">Kapcsolat</a>
+
+          </nav>
+
+          <button
+            class="lg:hidden inline-flex items-center justify-center rounded border border-stroke-mid bg-white px-3 py-2 hover:border-brand-red hover:text-brand-red"
+            type="button"
+            aria-label="Menü"
+          >
+            <span class="material-icons-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative overflow-hidden border-b border-stroke-light">
+        <div class="absolute inset-0 mosaic"></div>
+        <div class="absolute inset-0 mosaic-grid opacity-[0.18]"></div>
+
+        <img
+          alt="Modern iroda háttér"
+          class="absolute inset-0 h-full w-full object-cover opacity-25"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMrbtSuvbvAamdW3GV7M0F0kGmUtzSRhg35PmqjYZKgB5zw9oF8TPGSdu-EqxUzbuts2pNnCTKbGajWOjE6m0aLIOdFHF8F5a6TwXKwXuiWXkRf1w8Jp2CzSpI3E8xPtBbfoCdhNxvuCChMVRsZ4x9XrkO1c2QKoKgD2daVwnCWOYdTyNsHuMXb6ylSBAmDkX19JHa4bnclUwoU6hl0mzi1Rm3bkjvvNsqt7_mNtzU7oPaIAjdkisyON9aPG1shsHZHkQgahRVJ9M"
+        />
+
+        <div class="relative mx-auto max-w-7xl px-4 py-20">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded border border-stroke-mid bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite">
+              <span class="h-2 w-2 rounded-full bg-brand-red"></span>
+              Rólunk
+            </div>
+
+            <h1 class="mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-text-strong">
+              Nemzetközi háttér, helyi fókusz.
+            </h1>
+
+            <p class="mt-6 max-w-2xl text-lg leading-relaxed text-text-muted">
+              Az ECOVIS kontinentális Európából indult, és mára több mint 90 országban működő tanácsadói hálózattá vált.
+              Magyarországon a személyes jelenlétet és a szakmai fegyelmet kombináljuk a nemzetközi tudásbázissal.
+            </p>
+
+            <div class="mt-10 flex flex-wrap gap-3">
+              <a
+                href="#tortenetunk"
+                class="lift inline-flex items-center justify-center rounded bg-brand-red px-6 py-3 text-sm font-bold text-white shadow-soft transition"
+              >
+                Ismerjen meg minket
+              </a>
+              <a
+                href="#globalis-halozat"
+                class="lift inline-flex items-center justify-center rounded border border-brand-graphite bg-white/80 px-6 py-3 text-sm font-bold text-brand-graphite transition hover:border-brand-red hover:text-brand-red"
+              >
+                Globális hálózatunk
+              </a>
+            </div>
+
+            <div class="mt-12 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
+              <span class="h-px w-10 bg-stroke-mid"></span>
+              Szakértelem • Megfelelés • Felelősség
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story / Team -->
+      <section id="tortenetunk" class="bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-20">
+          <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
+            <div class="order-2 lg:order-1">
+              <h2 class="font-serif text-3xl font-bold tracking-tight text-text-strong">
+                Szakértői csapat, nemzetközi háttértámogatással
+              </h2>
+              <p class="mt-5 text-sm leading-relaxed text-text-muted">
+                Erősségünk a helyi szintű személyes tanácsadás és a nemzetközi szakértői hálózat összehangolt együttműködése.
+                A cél mindig ugyanaz: tiszta döntések, auditképes működés, és kiszámítható ügyfélélmény.
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                Ügyvédeink, adótanácsadóink, könyvelőink, könyvvizsgálóink és közbeszerzési tanácsadóink egységes
+                minőségi standardok mentén dolgoznak — a helyi igényekhez igazítva.
+              </p>
+
+              <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                <div class="rounded border border-stroke-light bg-surface-soft p-5">
+                  <div class="text-3xl font-extrabold tracking-tight text-text-strong">90+</div>
+                  <div class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    Országban jelen vagyunk
+                  </div>
+                </div>
+                <div class="rounded border border-stroke-light bg-surface-soft p-5">
+                  <div class="text-3xl font-extrabold tracking-tight text-text-strong">12k+</div>
+                  <div class="mt-2 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    Szakértő munkatárs
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="order-1 lg:order-2">
+              <div class="overflow-hidden rounded border border-stroke-light shadow-crisp">
+                <img
+                  alt="Szakértői csapatunk"
+                  class="h-full w-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg5VWKUWg864Nk05HxmomP3Q4g_AQ4roP3oOjU7IpZvoCaYsTnCnGfD2a2fo2YmdqrTmQtiggpVFwDGNKFUiJzWnbQG43jwpUXaPWNRzSuT_tCNFZXafNjVKaDa3XXmunH1wV1S6AFmOcZQSHXyLBMGAWI5huZ3X7b_Yp318d_c6ECPWASVezOiwsTRcnw6RBfVZYJOsmcQ4Ab2rFw8QQjYUqlAzzWSHUOhtTBBZVSNc5x7m8iS7ifPiS6bt1YFu3161_bW-H4lZc"
+                />
+              </div>
+              <div class="mt-4 text-xs font-medium text-text-muted">
+                Személyes tanácsadás + nemzetközi tudás = gyors, kontrollált döntéstámogatás.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Global presence -->
+      <section id="globalis-halozat" class="border-y border-stroke-light bg-bg-soft">
+        <div class="mx-auto max-w-7xl px-4 py-20">
+          <div class="max-w-2xl">
+            <h2 class="font-serif text-3xl font-bold tracking-tight text-text-strong">Globális jelenlét</h2>
+            <p class="mt-4 text-sm leading-relaxed text-text-muted">
+              Ügyfeleink számíthatnak integrált megoldásainkra és egységes minőségi standardjainkra — határok nélkül,
+              helyi arcokkal.
+            </p>
+            <div class="mt-6 h-1 w-16 bg-brand-red"></div>
+          </div>
+
+          <div class="mt-12 overflow-hidden rounded border border-stroke-light bg-white shadow-crisp">
+            <div class="relative">
+              <img
+                alt="Világtérkép"
+                class="h-[420px] w-full object-cover opacity-90"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0j5qjHOb1B10yyGbZDkVgEb9lc-dJ7vKS5PDdrXtGNn6B3-xWOPKurFgh6rlH-etlsWjguQ4xBenXdOrs3r7Aw9dspZmJAwSZkVEji-LPTsUCw-Ez7stsUUpGQXBmbl6a5M2aGdqVzXzVbnaXH_V0cptkt_55GULWVra4fw1gzP77qj4kwki3UfY9ECq6MoqkIck4hSy8c46zgxOxgotRxZHqKGwOufgeHBMrgifAB4C2WJ-tYlWjWogs5AGgHswhumN53F3s_Ss"
+              />
+              <div class="absolute inset-0 flex items-center justify-center p-6">
+                <div class="max-w-lg rounded border border-stroke-mid bg-white/90 p-6 shadow-soft">
+                  <div class="text-xs font-bold uppercase tracking-[0.18em] text-text-muted">Alapelv</div>
+                  <div class="mt-2 font-serif text-2xl font-bold text-brand-red">“Global expertise with local faces”</div>
+                  <p class="mt-3 text-sm leading-relaxed text-text-muted">
+                    Tanácsadóink helyi szinten kísérik ügyfeleinket, miközben a nemzetközi hálózat tapasztalatait is
+                    mozgósítjuk — következetes módszertannal és fegyelmezett dokumentációval.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick facts row -->
+          <div class="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+            <div class="rounded border border-stroke-light bg-white p-6 shadow-crisp">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-text-muted">Módszertan</div>
+              <div class="mt-3 text-base font-extrabold tracking-tight text-text-strong">Standardizált, mégis rugalmas</div>
+              <p class="mt-2 text-sm leading-relaxed text-text-muted">Egységes keretek, helyi döntéstámogatás.</p>
+            </div>
+            <div class="rounded border border-stroke-light bg-white p-6 shadow-crisp">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-text-muted">Minőség</div>
+              <div class="mt-3 text-base font-extrabold tracking-tight text-text-strong">Auditképes működés</div>
+              <p class="mt-2 text-sm leading-relaxed text-text-muted">Átlátható folyamatok és dokumentáltság.</p>
+            </div>
+            <div class="rounded border border-stroke-light bg-white p-6 shadow-crisp">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-text-muted">Ügyfélélmény</div>
+              <div class="mt-3 text-base font-extrabold tracking-tight text-text-strong">Tényalapú kommunikáció</div>
+              <p class="mt-2 text-sm leading-relaxed text-text-muted">Konkrét lépések, konkrét felelősök.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (consistent with the refreshed home page) -->
+    <footer class="border-t border-stroke-dark bg-brand-graphite text-white">
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded bg-brand-red font-bold">E</div>
+              <div class="text-lg font-extrabold tracking-tight">
+                ECOVIS Compliance Solution <span class="font-light opacity-80">HUNGARY</span>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/70">
+              Szakértői csapatunk jogi, adó, könyvelési és könyvvizsgálati területen nyújt magas szintű tanácsadást.
+            </p>
+            <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">FB</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">LI</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">IN</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Szolgáltatások</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Jogi tanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Adótanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Könyvvizsgálat</a></li>
+              <li><a class="hover:text-white" href="#">Könyvelés</a></li>
+              <li><a class="hover:text-white" href="#">Üzleti tanácsadás</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Hasznos linkek</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Rólunk</a></li>
+              <li><a class="hover:text-white" href="#">Szakértőink</a></li>
+              <li><a class="hover:text-white" href="#">Karrier</a></li>
+              <li><a class="hover:text-white" href="#">Dokumentumtár</a></li>
+              <li><a class="hover:text-white" href="#">Adatkezelési tájékoztató</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Kapcsolat</h3>
+            <ul class="mt-6 space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <span class="material-icons-outlined text-brand-red">location_on</span>
+                <span>1136 Budapest Hollán Ernő utca 31 fszt 3.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">phone</span>
+                <span>+36 30 731 3145  </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">mail</span>
+                <span>info@ecovis-accounting.hu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/60">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p>© 2026 ECOVIS Compliance Solution HUNGARY. Minden jog fenntartva.</p>
+            <div class="flex flex-wrap gap-x-6 gap-y-2">
+              <a class="hover:text-white" href="#">Impresszum</a>
+              <a class="hover:text-white" href="#">Adatvédelem</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

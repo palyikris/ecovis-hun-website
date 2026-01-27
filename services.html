@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Szolgáltatásaink – ECOVIS Hungary</title>
+
+    <!-- Corporate typography (Style guide: Noto Sans / Noto Serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&family=Noto+Serif:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons (placeholder; swap to brand icon set later if you have it exported) -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              /**
+               * Brand palette aligned to the style guide structure.
+               * Keep these centralized; replace with exact token values if you maintain a tokens file.
+               */
+              brand: {
+                red: "#C00838",
+                red2: "#C82838",
+                currant: "#981040",
+                plum: "#880850",
+                graphite: "#283030",
+                grey: "#686868",
+                mist: "#B0B8B8",
+                fog: "#E8E8E8",
+                white: "#FFFFFF",
+              },
+              bg: {
+                light: "#FFFFFF",
+                soft: "#F7F7F7",
+              },
+              surface: {
+                light: "#FFFFFF",
+                soft: "#F7F7F7",
+              },
+              text: {
+                strong: "#0B0F10",
+                body: "#1F2937",
+                muted: "#556066",
+                inverse: "#FFFFFF",
+              },
+              stroke: {
+                light: "#E6E6E6",
+                mid: "#D6D6D6",
+                dark: "#2B2F31",
+              },
+            },
+            fontFamily: {
+              sans: ["Noto Sans", "ui-sans-serif", "system-ui", "sans-serif"],
+              serif: ["Noto Serif", "ui-serif", "Georgia", "serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              md: "0.375rem",
+              lg: "0.5rem",
+            },
+            boxShadow: {
+              soft: "0 10px 25px -15px rgba(0,0,0,0.35)",
+              crisp: "0 8px 24px -18px rgba(0,0,0,0.45)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* Brand mosaic principle – subtle and editorial */
+      .mosaic {
+        background-image: linear-gradient(
+            90deg,
+            rgba(192, 8, 56, 0.08) 0%,
+            rgba(152, 16, 64, 0.06) 35%,
+            rgba(136, 8, 80, 0.05) 70%,
+            rgba(255, 255, 255, 0) 100%
+          ),
+          linear-gradient(0deg, rgba(40, 48, 48, 0.04), rgba(40, 48, 48, 0.04));
+      }
+      .mosaic-grid {
+        background-size: 64px 64px;
+        background-image: linear-gradient(to right, rgba(40, 48, 48, 0.06) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(40, 48, 48, 0.06) 1px, transparent 1px);
+      }
+
+      /* Avoid “bouncy SaaS” feel */
+      .lift:hover {
+        transform: translateY(-2px);
+      }
+    </style>
+  </head>
+
+  <body class="bg-bg-light text-text-body antialiased">
+    <!-- Top utility bar (consistent with other pages) -->
+    <div class="border-b border-stroke-light bg-surface-soft">
+      <div class="mx-auto max-w-7xl px-4 py-2">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs font-medium tracking-wide text-text-muted">
+            <div class="flex items-center gap-3">
+              <a class="hover:text-brand-red" href="#">FB</a>
+              <span class="h-4 w-px bg-stroke-mid"></span>
+              <a class="hover:text-brand-red" href="#">IN</a>
+              <span class="h-4 w-px bg-stroke-mid"></span>
+              <a class="hover:text-brand-red" href="#">LI</a>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-4 text-xs font-medium tracking-wide text-text-muted">
+            <a class="hover:text-brand-red" href="#">EN</a>
+            <span class="h-4 w-px bg-stroke-mid"></span>
+            <a class="text-brand-red font-semibold" href="#" aria-current="page">HU</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header (consistent) -->
+    <header class="sticky top-0 z-50 border-b border-stroke-light bg-white/90 backdrop-blur">
+      <div class="mx-auto max-w-7xl px-4 py-5">
+        <div class="flex items-center justify-between gap-6">
+          <a href="#" class="group flex items-center gap-4">
+            <div class="grid h-11 w-11 place-items-center rounded bg-brand-red text-white font-bold">E</div>
+            <div class="leading-tight">
+              <div class="text-xl font-extrabold tracking-tight text-text-strong">
+                ECOVIS <span class="font-light text-brand-graphite">HUNGARY</span>
+              </div>
+              <div class="text-[10px] uppercase tracking-[0.18em] text-text-muted">
+                the lawyer • the tax adviser • the auditor • the accountant
+              </div>
+            </div>
+          </a>
+
+          <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-text-body">
+            <a class="hover:text-brand-red" href="/index.html">Főoldal</a>
+            <a class="hover:text-brand-red" href="/about.html">Rólunk</a>
+            <a class="hover:text-brand-red" href="/experts.html">Szakértőink</a>
+            <a class="hover:text-brand-red" href="/contact.html">Kapcsolat</a>
+          </nav>
+
+          <button
+            class="lg:hidden inline-flex items-center justify-center rounded border border-stroke-mid bg-white px-3 py-2 hover:border-brand-red hover:text-brand-red"
+            type="button"
+            aria-label="Menü"
+          >
+            <span class="material-icons-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="relative overflow-hidden border-b border-stroke-light">
+        <div class="absolute inset-0 mosaic"></div>
+        <div class="absolute inset-0 mosaic-grid opacity-[0.18]"></div>
+
+        <img
+          alt="Vállalati iroda háttér"
+          class="absolute inset-0 h-full w-full object-cover opacity-25"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCKebWj-i756s4yeYkDpvfQpJhS8-sSt95HMbj_LaqJ3fvEc-w8HIG_VxOMKhYE2XmxdHPlsmuVI0pyw6a6t6JlrNF-YjC_Mmdltet6VISOKe7sw7mmr1mjl8-KNsOuanhmUany5Pc8PGleIvUbkLKvdVb4lKd8NQgQdTmcZFKa2NF1g4Kp7tSDLT7SVRh8WNE3VR2cQ3S3AZTA_J83GwxzpDMSVLGtFxfjMkNpzej9TveTOzkXvoXaWZvIWj3-Ib6d_IUKFISU0w"
+        />
+
+        <div class="relative mx-auto max-w-7xl px-4 py-20 text-center">
+          <div class="mx-auto max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded border border-stroke-mid bg-white/85 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite">
+              <span class="h-2 w-2 rounded-full bg-brand-red"></span>
+              Szakértelem &amp; Megbízhatóság
+            </div>
+
+            <h1 class="mt-6 font-serif text-5xl font-bold leading-[1.05] tracking-tight text-text-strong">
+              Szolgáltatásaink
+            </h1>
+
+            <p class="mt-6 text-lg leading-relaxed text-text-muted">
+              Komplex tanácsadási portfólióval támogatjuk ügyfeleinket a hazai és nemzetközi piacon. Jogi, adózási,
+              számviteli és könyvvizsgálati területeken egységes szemléletet és következetes minőséget biztosítunk.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-3">
+              <a
+                href="#szolgaltatasok"
+                class="lift inline-flex items-center justify-center rounded bg-brand-red px-6 py-3 text-sm font-bold text-white shadow-soft transition"
+              >
+                Áttekintés
+              </a>  
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services grid -->
+      <section id="szolgaltatasok" class="bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-20">
+          <div class="max-w-2xl">
+            <h2 class="font-serif text-3xl font-bold tracking-tight text-text-strong">Szolgáltatási területek</h2>
+            <p class="mt-4 text-sm leading-relaxed text-text-muted">
+              Röviden, érthetően, döntéstámogatóan — a kulcs fókuszpontok kiemelésével.
+            </p>
+            <div class="mt-6 h-1 w-16 bg-brand-red"></div>
+          </div>
+
+          <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <!-- Card -->
+            <article class="rounded border border-stroke-light bg-white p-6 shadow-crisp transition hover:border-brand-red">
+              <div class="flex items-start justify-between gap-4">
+                <span class="material-icons-outlined text-3xl text-brand-red">gavel</span>
+                <span class="material-icons-outlined text-xl text-stroke-mid">arrow_forward</span>
+              </div>
+              <h3 class="mt-5 text-base font-extrabold tracking-tight text-text-strong">Jogi tanácsadás</h3>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted">
+                Teljes körű vállalati jogi támogatás, szerződéses és peres képviselet, megfelelési kérdések.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-text-muted">
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Társasági jog
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Ingatlanügyletek
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Adatvédelem (GDPR)
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite hover:text-brand-red"
+              >
+                Részletek <span class="material-icons-outlined text-base">chevron_right</span>
+              </a>
+            </article>
+
+            <article class="rounded border border-stroke-light bg-white p-6 shadow-crisp transition hover:border-brand-red">
+              <div class="flex items-start justify-between gap-4">
+                <span class="material-icons-outlined text-3xl text-brand-red">calculate</span>
+                <span class="material-icons-outlined text-xl text-stroke-mid">arrow_forward</span>
+              </div>
+              <h3 class="mt-5 text-base font-extrabold tracking-tight text-text-strong">Adótanácsadás</h3>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted">
+                Adóstruktúrák kialakítása, transzferár dokumentáció, képviselet és kockázatkezelés.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-text-muted">
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Nemzetközi adózás
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Transzferárazás
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Adótervezés
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite hover:text-brand-red"
+              >
+                Részletek <span class="material-icons-outlined text-base">chevron_right</span>
+              </a>
+            </article>
+
+            <article class="rounded border border-stroke-light bg-white p-6 shadow-crisp transition hover:border-brand-red">
+              <div class="flex items-start justify-between gap-4">
+                <span class="material-icons-outlined text-3xl text-brand-red">verified_user</span>
+                <span class="material-icons-outlined text-xl text-stroke-mid">arrow_forward</span>
+              </div>
+              <h3 class="mt-5 text-base font-extrabold tracking-tight text-text-strong">Könyvvizsgálat</h3>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted">
+                Független audit, due diligence, speciális ellenőrzések nemzetközi standardok mentén.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-text-muted">
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Éves beszámolók
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Pénzügyi átvilágítás
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> IFRS tanácsadás
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite hover:text-brand-red"
+              >
+                Részletek <span class="material-icons-outlined text-base">chevron_right</span>
+              </a>
+            </article>
+
+            <article class="rounded border border-stroke-light bg-white p-6 shadow-crisp transition hover:border-brand-red">
+              <div class="flex items-start justify-between gap-4">
+                <span class="material-icons-outlined text-3xl text-brand-red">account_balance_wallet</span>
+                <span class="material-icons-outlined text-xl text-stroke-mid">arrow_forward</span>
+              </div>
+              <h3 class="mt-5 text-base font-extrabold tracking-tight text-text-strong">
+                Könyvelés &amp; Bérszámfejtés
+              </h3>
+              <p class="mt-3 text-sm leading-relaxed text-text-muted">
+                Precíz számvitel, bérszámfejtés és outsourcing – digitális, kontrollált működéssel.
+              </p>
+              <ul class="mt-5 space-y-2 text-sm text-text-muted">
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Teljes körű számvitel
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Bérszámfejtés
+                </li>
+                <li class="flex items-center gap-2">
+                  <span class="material-icons-outlined text-base text-brand-red">check_circle</span> Controlling riportok
+                </li>
+              </ul>
+              <a
+                href="#"
+                class="mt-6 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.18em] text-brand-graphite hover:text-brand-red"
+              >
+                Részletek <span class="material-icons-outlined text-base">chevron_right</span>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials / Vélemények (auto-carousel) -->
+      <section class="bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-20">
+          <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div class="max-w-2xl">
+              <h2 class="font-serif text-3xl font-bold tracking-tight text-text-strong">Vélemények</h2>
+              <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                Rövid ügyfél-visszajelzések arról, hogyan dolgozunk: fegyelmezetten, tisztán, auditképesen.
+              </p>
+              <div class="mt-6 h-1 w-16 bg-brand-red"></div>
+            </div>
+
+            <div class="flex items-center gap-2">
+              <button
+                id="t-prev"
+                type="button"
+                class="inline-flex items-center justify-center rounded border border-stroke-mid bg-white px-3 py-2 text-sm font-bold text-brand-graphite hover:border-brand-red hover:text-brand-red"
+                aria-label="Előző"
+              >
+                <span class="material-icons-outlined">chevron_left</span>
+              </button>
+              <button
+                id="t-next"
+                type="button"
+                class="inline-flex items-center justify-center rounded border border-stroke-mid bg-white px-3 py-2 text-sm font-bold text-brand-graphite hover:border-brand-red hover:text-brand-red"
+                aria-label="Következő"
+              >
+                <span class="material-icons-outlined">chevron_right</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Track -->
+          <div class="mt-12 relative">
+            <div class="overflow-hidden rounded border border-stroke-light bg-white shadow-crisp">
+              <div
+                id="t-track"
+                class="flex gap-4 p-4 transition-transform duration-500 ease-out"
+                style="transform: translateX(0px)"
+                aria-live="polite"
+              >
+                <!-- Card 1 -->
+                <article class="t-card w-[min(520px,90vw)] shrink-0 rounded border border-stroke-light bg-white p-6">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Ügyfél</div>
+                      <div class="mt-1 text-base font-extrabold tracking-tight text-text-strong">Danube Logistics Zrt.</div>
+                    </div>
+                    <div class="flex items-center gap-1" aria-label="5 csillag">
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                    </div>
+                  </div>
+
+                  <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                    „A kommunikáció végig tényalapú volt, a határidők tartása pedig konkrétan példás. A javaslatok nem
+                    általánosságok, hanem azonnal implementálható lépések.”
+                  </p>
+
+                  <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    <span class="h-px w-10 bg-stroke-mid"></span>
+                    Adótanácsadás
+                  </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="t-card w-[min(520px,90vw)] shrink-0 rounded border border-stroke-light bg-white p-6">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Ügyfél</div>
+                      <div class="mt-1 text-base font-extrabold tracking-tight text-text-strong">Nordbridge Kft.</div>
+                    </div>
+                    <div class="flex items-center gap-1" aria-label="5 csillag">
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                    </div>
+                  </div>
+
+                  <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                    „A könyvelési és bérszámfejtési folyamataink átláthatóbbak lettek, a riportok pedig végre egységesek.
+                    Nincs ‘varázslat’, minden dokumentálva van.”
+                  </p>
+
+                  <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    <span class="h-px w-10 bg-stroke-mid"></span>
+                    Könyvelés &amp; Bérszámfejtés
+                  </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="t-card w-[min(520px,90vw)] shrink-0 rounded border border-stroke-light bg-white p-6">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Ügyfél</div>
+                      <div class="mt-1 text-base font-extrabold tracking-tight text-text-strong">Pannon Real Estate Nyrt.</div>
+                    </div>
+                    <div class="flex items-center gap-1" aria-label="4 csillag">
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-stroke-mid">star</span>
+                    </div>
+                  </div>
+
+                  <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                    „A due diligence során gyorsan azonosították a kockázatokat, és a prioritások is jól voltak kezelve.
+                    Kaptunk egy tiszta ‘to-do’ listát felelősökkel.”
+                  </p>
+
+                  <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    <span class="h-px w-10 bg-stroke-mid"></span>
+                    Könyvvizsgálat / Átvilágítás
+                  </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="t-card w-[min(520px,90vw)] shrink-0 rounded border border-stroke-light bg-white p-6">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div class="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted">Ügyfél</div>
+                      <div class="mt-1 text-base font-extrabold tracking-tight text-text-strong">Helix Manufacturing Kft.</div>
+                    </div>
+                    <div class="flex items-center gap-1" aria-label="5 csillag">
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                      <span class="material-icons-outlined text-base text-brand-red">star</span>
+                    </div>
+                  </div>
+
+                  <p class="mt-4 text-sm leading-relaxed text-text-muted">
+                    „Szerződéses és compliance kérdésekben végre nincs ping-pong. Egy kézben van, de mégis több szakterület
+                    együtt mozog. Ez ritka.”
+                  </p>
+
+                  <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-text-muted">
+                    <span class="h-px w-10 bg-stroke-mid"></span>
+                    Jogi tanácsadás
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Dots -->
+            <div class="mt-6 flex items-center justify-center gap-2" aria-label="Navigáció">
+              <button
+                class="t-dot h-2.5 w-2.5 rounded-full bg-brand-red"
+                type="button"
+                aria-label="1. vélemény"
+                data-index="0"
+              ></button>
+              <button
+                class="t-dot h-2.5 w-2.5 rounded-full bg-stroke-mid"
+                type="button"
+                aria-label="2. vélemény"
+                data-index="1"
+              ></button>
+              <button
+                class="t-dot h-2.5 w-2.5 rounded-full bg-stroke-mid"
+                type="button"
+                aria-label="3. vélemény"
+                data-index="2"
+              ></button>
+              <button
+                class="t-dot h-2.5 w-2.5 rounded-full bg-stroke-mid"
+                type="button"
+                aria-label="4. vélemény"
+                data-index="3"
+              ></button>
+            </div>
+
+            <div class="mt-6 text-center text-xs font-medium text-text-muted">
+              Tipp: a carousel automatikusan léptet, de a nyilakkal és pontokkal manuálisan is vezérelhető.
+            </div>
+          </div>
+        </div>
+
+        <script>
+          (() => {
+            const track = document.getElementById("t-track");
+            const prev = document.getElementById("t-prev");
+            const next = document.getElementById("t-next");
+            const dots = Array.from(document.querySelectorAll(".t-dot"));
+            const cards = Array.from(document.querySelectorAll(".t-card"));
+
+            if (!track || !prev || !next || !cards.length) return;
+
+            let index = 0;
+            let timer = null;
+
+            const getStep = () => {
+              // width of one card + gap (gap-4 => 16px)
+              const card = cards[0];
+              const w = card.getBoundingClientRect().width;
+              return Math.round(w + 16);
+            };
+
+            const setDots = (i) => {
+              dots.forEach((d, di) => {
+                d.classList.toggle("bg-brand-red", di === i);
+                d.classList.toggle("bg-stroke-mid", di !== i);
+              });
+            };
+
+            const go = (i) => {
+              const step = getStep();
+              index = (i + cards.length) % cards.length;
+              track.style.transform = `translateX(${-index * step}px)`;
+              setDots(index);
+            };
+
+            const start = () => {
+              stop();
+              timer = setInterval(() => go(index + 1), 4500);
+            };
+
+            const stop = () => {
+              if (timer) clearInterval(timer);
+              timer = null;
+            };
+
+            // Controls
+            prev.addEventListener("click", () => {
+              go(index - 1);
+              start();
+            });
+            next.addEventListener("click", () => {
+              go(index + 1);
+              start();
+            });
+
+            dots.forEach((d) => {
+              d.addEventListener("click", () => {
+                const i = Number(d.getAttribute("data-index") || "0");
+                go(i);
+                start();
+              });
+            });
+
+            // Pause on hover/focus for “corporate” feel
+            const wrapper = track.closest(".overflow-hidden");
+            if (wrapper) {
+              wrapper.addEventListener("mouseenter", stop);
+              wrapper.addEventListener("mouseleave", start);
+              wrapper.addEventListener("focusin", stop);
+              wrapper.addEventListener("focusout", start);
+            }
+
+            // Keep position correct on resize
+            window.addEventListener("resize", () => go(index));
+
+            // Init
+            go(0);
+            start();
+          })();
+        </script>
+      </section>
+
+    </main>
+
+    <!-- Footer (consistent with other refreshed pages; simplified newsletter to match “crisp” style) -->
+    <footer class="border-t border-stroke-dark bg-brand-graphite text-white">
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded bg-brand-red font-bold">E</div>
+              <div class="text-lg font-extrabold tracking-tight">
+                ECOVIS Compliance Solution <span class="font-light opacity-80">HUNGARY</span>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/70">
+              Szakértői csapatunk jogi, adó, könyvelési és könyvvizsgálati területen nyújt magas szintű tanácsadást.
+            </p>
+            <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">FB</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">LI</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">IN</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Szolgáltatások</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Jogi tanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Adótanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Könyvvizsgálat</a></li>
+              <li><a class="hover:text-white" href="#">Könyvelés</a></li>
+              <li><a class="hover:text-white" href="#">Üzleti tanácsadás</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Hasznos linkek</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Rólunk</a></li>
+              <li><a class="hover:text-white" href="#">Szakértőink</a></li>
+              <li><a class="hover:text-white" href="#">Karrier</a></li>
+              <li><a class="hover:text-white" href="#">Dokumentumtár</a></li>
+              <li><a class="hover:text-white" href="#">Adatkezelési tájékoztató</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Kapcsolat</h3>
+            <ul class="mt-6 space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <span class="material-icons-outlined text-brand-red">location_on</span>
+                <span>1136 Budapest Hollán Ernő utca 31 fszt 3.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">phone</span>
+                <span>+36 30 731 3145  </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">mail</span>
+                <span>info@ecovis-accounting.hu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/60">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p>© 2026 ECOVIS Compliance Solution HUNGARY. Minden jog fenntartva.</p>
+            <div class="flex flex-wrap gap-x-6 gap-y-2">
+              <a class="hover:text-white" href="#">Impresszum</a>
+              <a class="hover:text-white" href="#">Adatvédelem</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

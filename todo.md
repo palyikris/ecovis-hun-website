@@ -1,0 +1,2 @@
+index:
+- jogi nem kell

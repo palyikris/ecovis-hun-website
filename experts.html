@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="hu">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Ecovis Hungary – Szakértőink</title>
+
+    <!-- Corporate fonts (style-guide aligned: Sans + Serif pairing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&family=Noto+Serif:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Noto Sans", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial"],
+              serif: ["Noto Serif", "ui-serif", "Georgia", "Times New Roman", "serif"],
+            },
+            colors: {
+              // Core tokens (keep these consistent across pages)
+              "brand-red": "#D71920",
+              "brand-graphite": "rgb(40 48 48)",
+
+              "surface": "#FFFFFF",
+              "surface-2": "#F8FAFC",
+              "stroke-light": "#E2E8F0",
+              "stroke-mid": "#CBD5E1",
+
+              "text-strong": "#0F172A",
+              "text-muted": "#475569",
+
+              // Dark tokens
+              "surface-dark": "#0B1220",
+              "surface-2-dark": "#0F172A",
+              "stroke-dark": "#1F2937",
+              "text-strong-dark": "#F8FAFC",
+              "text-muted-dark": "#94A3B8",
+            },
+            boxShadow: {
+              crisp: "0 10px 30px rgba(2, 6, 23, 0.08)",
+              soft: "0 8px 20px rgba(2, 6, 23, 0.10)",
+            },
+            borderRadius: {
+              xl: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      .dark {
+        color-scheme: dark;
+      }
+      .hero-grid {
+        background-image: radial-gradient(circle at 1px 1px, rgba(2, 6, 23, 0.10) 1px, transparent 0);
+        background-size: 22px 22px;
+      }
+      .dark .hero-grid {
+        background-image: radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.18) 1px, transparent 0);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body class="bg-surface text-text-strong dark:bg-surface-dark dark:text-text-strong-dark font-sans transition-colors duration-300">
+    <!-- Top utility bar -->
+    <div class="border-b border-stroke-light dark:border-stroke-dark bg-surface-2 dark:bg-surface-2-dark">
+      <div class="mx-auto max-w-7xl px-4 py-2 flex items-center justify-between gap-4 text-xs font-medium">
+        <div class="flex items-center gap-5 min-w-0">
+
+          <div class="hidden sm:flex items-center gap-3 text-text-muted dark:text-text-muted-dark">
+            <a class="hover:text-brand-red transition-colors" href="#">FB</a>
+            <span class="text-stroke-mid dark:text-stroke-dark">|</span>
+            <a class="hover:text-brand-red transition-colors" href="#">IN</a>
+            <span class="text-stroke-mid dark:text-stroke-dark">|</span>
+            <a class="hover:text-brand-red transition-colors" href="#">LI</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 shrink-0">
+          <a class="hover:text-brand-red transition-colors" href="#">EN</a>
+          <span class="text-stroke-mid dark:text-stroke-dark">|</span>
+          <a class="text-brand-red font-bold" href="#">HU</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main header -->
+    <header class="sticky top-0 z-50 bg-white/90 dark:bg-surface-dark/90 backdrop-blur border-b border-stroke-light dark:border-stroke-dark">
+      <div class="mx-auto max-w-7xl px-4 py-5 flex items-center justify-between gap-6">
+        <!-- Brand -->
+        <a class="flex items-center gap-3 min-w-0" href="#">
+          <div class="h-11 w-11 rounded-full bg-brand-red text-white grid place-items-center font-extrabold text-xl">E</div>
+          <div class="min-w-0">
+            <div class="text-lg sm:text-xl font-extrabold tracking-tight uppercase leading-none">
+              ECOVIS <span class="font-light">HUNGARY</span>
+            </div>
+            <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-text-muted dark:text-text-muted-dark whitespace-nowrap">
+              the lawyer • the tax adviser • the auditor • the accountant
+            </div>
+          </div>
+        </a>
+
+        <!-- Nav -->
+        <nav class="hidden lg:flex items-center gap-1">
+          <a class="px-3 py-2 text-sm font-semibold hover:text-brand-red transition-colors" href="/index.html">Főoldal</a>
+          <a class="px-3 py-2 text-sm font-semibold hover:text-brand-red transition-colors" href="/about.html">Rólunk</a>
+          <a class="px-3 py-2 text-sm font-semibold hover:text-brand-red transition-colors inline-flex items-center gap-1" href="/services.html">
+            Szolgáltatásaink
+          </a>
+          <a class="px-3 py-2 text-sm font-semibold hover:text-brand-red transition-colors" href="/contact.html">Kapcsolat</a>
+        </nav>
+
+        <button class="lg:hidden inline-flex items-center justify-center rounded border border-stroke-light dark:border-stroke-dark px-3 py-2" type="button">
+          <span class="material-icons-outlined text-base">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero / page intro -->
+      <section class="border-b border-stroke-light dark:border-stroke-dark bg-surface-2 dark:bg-surface-2-dark relative overflow-hidden">
+        <div class="absolute inset-0 hero-grid opacity-30 pointer-events-none"></div>
+
+        <div class="mx-auto max-w-7xl px-4 py-14 relative">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 rounded-full border border-stroke-light dark:border-stroke-dark bg-white/70 dark:bg-surface-dark/70 px-4 py-1">
+              <span class="h-2 w-2 rounded-full bg-brand-red"></span>
+              <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-text-muted dark:text-text-muted-dark">Szakértői csapat</span>
+            </div>
+
+            <h1 class="mt-5 font-serif text-3xl sm:text-4xl font-bold tracking-tight text-text-strong dark:text-text-strong-dark">
+              Szakértőink
+            </h1>
+
+            <p class="mt-4 text-sm sm:text-base leading-relaxed text-text-muted dark:text-text-muted-dark">
+              Több évtizedes tapasztalattal rendelkező kollégáink jogi, adózási, könyvvizsgálati és számviteli területen
+              támogatják ügyfeleinket. A fókusz egyszerű: tiszta megoldások, vállalható határidők, auditképes működés.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section class="mx-auto max-w-7xl px-4 py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <!-- Card template (repeat) -->
+          <article class="group rounded-xl border border-stroke-light dark:border-stroke-dark bg-white dark:bg-surface-dark overflow-hidden hover:shadow-soft transition-shadow">
+            <div class="relative aspect-[4/5] bg-surface-2 dark:bg-surface-2-dark overflow-hidden">
+              <img
+                alt="Szakértő portré"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB46Fj9cbrfqd4M23o874iZjjs1w8SFxfcdjRta8RpG3z69Ai1YVwg7Og69fj383xl1zy2oz8FDEtHdtivVH11D49Ju88xeO06uTNrezI8j2VWPmbcgNWRqMqzL480yjsFNyj4Q0XR1hqt0ENQFH2ul1ebJiJJKuB7KgV0v-oUYYbdbB5UIOe2W9ioLgAbYNqkU8IhbNY-_c8r_8lmldfveJP57rTTUnk7V4kqBQVejLn5JnsTE65YmcNOiY9hPP3PiSk3pe6JLlg"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="inline-flex items-center rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                  Jog
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-extrabold tracking-tight text-text-strong dark:text-text-strong-dark group-hover:text-brand-red transition-colors">
+                Dr. Kovács István
+              </h3>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-text-muted dark:text-text-muted-dark">
+                Irodavezető ügyvéd, Partner
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-muted-dark line-clamp-3">
+                Szakterülete az ingatlanjog, a társasági jog és a komplex nemzetközi tranzakciók jogi támogatása több mint 15 év tapasztalattal.
+              </p>
+
+              <div class="mt-5 pt-4 border-t border-stroke-light dark:border-stroke-dark flex items-center justify-between">
+                <a class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-red hover:opacity-80 transition" href="#">
+                  Profil
+                  <span class="material-icons-outlined text-sm">chevron_right</span>
+                </a>
+
+                <button
+                  class="inline-flex items-center justify-center rounded border border-stroke-light dark:border-stroke-dark px-2.5 py-2 hover:border-brand-red hover:text-brand-red transition-colors"
+                  type="button"
+                  aria-label="E-mail küldése"
+                >
+                  <span class="material-icons-outlined text-base">mail</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-xl border border-stroke-light dark:border-stroke-dark bg-white dark:bg-surface-dark overflow-hidden hover:shadow-soft transition-shadow">
+            <div class="relative aspect-[4/5] bg-surface-2 dark:bg-surface-2-dark overflow-hidden">
+              <img
+                alt="Szakértő portré"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpvaS23Q8Mw3Oe6GDJ0QH_Q0zackPNcUy7yU0nB9il9EOYreto3ARZAzb-O0qW1tESIew6tiCQzw3WBt9NFqYvF4AES6i3CQO8YqSCBrAE_6IHlO2Qphea_EfD7IezAz4-MSJ-6scl8GsmCFS-YLsRoxNyTje7uOh7-E2jUECWt5wMovppdBFUGnAVzB49QjzIrT0NRrN7sOwWi7OkNMc-u6EYnUpGbKdtgbF8YxxbfGD-c4o_SdCgvOQgD0AleF1oMUo7XEwxqC8"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="inline-flex items-center rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                  Adózás
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-extrabold tracking-tight text-text-strong dark:text-text-strong-dark group-hover:text-brand-red transition-colors">
+                Szabó Beatrix
+              </h3>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-text-muted dark:text-text-muted-dark">
+                Okleveles adószakértő
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-muted-dark line-clamp-3">
+                Nemzetközi adótervezés és transzferár tanácsadás specialistája, segíti az ügyfeleket a határokon átnyúló adózási kérdésekben.
+              </p>
+
+              <div class="mt-5 pt-4 border-t border-stroke-light dark:border-stroke-dark flex items-center justify-between">
+                <a class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-red hover:opacity-80 transition" href="#">
+                  Profil
+                  <span class="material-icons-outlined text-sm">chevron_right</span>
+                </a>
+
+                <button
+                  class="inline-flex items-center justify-center rounded border border-stroke-light dark:border-stroke-dark px-2.5 py-2 hover:border-brand-red hover:text-brand-red transition-colors"
+                  type="button"
+                  aria-label="E-mail küldése"
+                >
+                  <span class="material-icons-outlined text-base">mail</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-xl border border-stroke-light dark:border-stroke-dark bg-white dark:bg-surface-dark overflow-hidden hover:shadow-soft transition-shadow">
+            <div class="relative aspect-[4/5] bg-surface-2 dark:bg-surface-2-dark overflow-hidden">
+              <img
+                alt="Szakértő portré"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfXCeE3_6IWg6iHjeUOS2gXPaNGr_jivbaDAEJ3xcnSAnPQVdL883IUChGkBE_SKIK-O9pnzP1qh33YC0YOJykgQJA8DHHTOEjVx8gMjrJ3-0LQ5erlu6pET0MBO4uZbEaqHe4u1-JJ2vsEzDfKQ04BEPUcS34oOpnoVSxBhIYnL3lC75mCNReTOy8i5FsmrdByGScLHga10MV7_YYaimoc8dfIQNtiikztotvQcQNG7HmDcCAK2Kt-9dzGylgf5ZajYS96o-Ws9c"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="inline-flex items-center rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                  Könyvvizsgálat
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-extrabold tracking-tight text-text-strong dark:text-text-strong-dark group-hover:text-brand-red transition-colors">
+                Nagy László
+              </h3>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-text-muted dark:text-text-muted-dark">
+                Bejegyzett könyvvizsgáló
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-muted-dark line-clamp-3">
+                Szakmai tapasztalata kiterjed a tőzsdei társaságok auditjára és az IFRS szerinti beszámolókészítés ellenőrzésére.
+              </p>
+
+              <div class="mt-5 pt-4 border-t border-stroke-light dark:border-stroke-dark flex items-center justify-between">
+                <a class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-red hover:opacity-80 transition" href="#">
+                  Profil
+                  <span class="material-icons-outlined text-sm">chevron_right</span>
+                </a>
+
+                <button
+                  class="inline-flex items-center justify-center rounded border border-stroke-light dark:border-stroke-dark px-2.5 py-2 hover:border-brand-red hover:text-brand-red transition-colors"
+                  type="button"
+                  aria-label="E-mail küldése"
+                >
+                  <span class="material-icons-outlined text-base">mail</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="group rounded-xl border border-stroke-light dark:border-stroke-dark bg-white dark:bg-surface-dark overflow-hidden hover:shadow-soft transition-shadow">
+            <div class="relative aspect-[4/5] bg-surface-2 dark:bg-surface-2-dark overflow-hidden">
+              <img
+                alt="Szakértő portré"
+                class="h-full w-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.03]"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzt0c3pAX-HIQxpXGQpOMvjFtRWkdicg5Umwz1Nsv8d6YenWdwhd6TthTwW5pK9T89da-glPRe99kQhiCUIkeSVjjtrckHSdg9iVb3qHZvSNhfaRccYdlE1UnFl_nqejvWo-zIQzK8TvHiblA3XClGwZjmJz8UsW-g6LyMOuZZLnYTHJglBX1cyNWSw-ow_6jBMsjJn32N8fsh4Dj9ulKQfDanl6h_fgg-k-Bf9aAryVwz5BC1os3QwLiGEcZvTw1eZKW7QZilc1E"
+              />
+              <div class="absolute top-3 left-3">
+                <span class="inline-flex items-center rounded-full bg-brand-red px-3 py-1 text-[10px] font-bold uppercase tracking-[0.18em] text-white">
+                  Könyvelés
+                </span>
+              </div>
+            </div>
+
+            <div class="p-5">
+              <h3 class="text-base font-extrabold tracking-tight text-text-strong dark:text-text-strong-dark group-hover:text-brand-red transition-colors">
+                Tóth Andrea
+              </h3>
+              <p class="mt-1 text-[11px] font-bold uppercase tracking-[0.16em] text-text-muted dark:text-text-muted-dark">
+                Pénzügyi és számviteli vezető
+              </p>
+
+              <p class="mt-4 text-sm leading-relaxed text-text-muted dark:text-text-muted-dark line-clamp-3">
+                Felelős a komplex számviteli folyamatok irányításáért és a kis- és középvállalkozások teljes körű pénzügyi menedzseléséért.
+              </p>
+
+              <div class="mt-5 pt-4 border-t border-stroke-light dark:border-stroke-dark flex items-center justify-between">
+                <a class="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-[0.18em] text-brand-red hover:opacity-80 transition" href="#">
+                  Profil
+                  <span class="material-icons-outlined text-sm">chevron_right</span>
+                </a>
+
+                <button
+                  class="inline-flex items-center justify-center rounded border border-stroke-light dark:border-stroke-dark px-2.5 py-2 hover:border-brand-red hover:text-brand-red transition-colors"
+                  type="button"
+                  aria-label="E-mail küldése"
+                >
+                  <span class="material-icons-outlined text-base">mail</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Add the remaining cards with the same template… -->
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Footer (kept consistent with other pages) -->
+    <footer class="border-t border-stroke-dark bg-brand-graphite text-white">
+      <div class="mx-auto max-w-7xl px-4 py-16">
+        <div class="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="grid h-10 w-10 place-items-center rounded bg-brand-red font-bold">E</div>
+              <div class="text-lg font-extrabold tracking-tight">
+                ECOVIS Compliance Solution <span class="font-light opacity-80">HUNGARY</span>
+              </div>
+            </div>
+            <p class="mt-5 text-sm leading-relaxed text-white/70">
+              Szakértői csapatunk jogi, adó, könyvelési és könyvvizsgálati területen nyújt magas szintű tanácsadást.
+            </p>
+            <div class="mt-6 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.18em] text-white/70">
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">FB</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">LI</a>
+              <a class="rounded border border-white/20 px-3 py-2 hover:border-brand-red hover:text-white" href="#">IN</a>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Szolgáltatások</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Jogi tanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Adótanácsadás</a></li>
+              <li><a class="hover:text-white" href="#">Könyvvizsgálat</a></li>
+              <li><a class="hover:text-white" href="#">Könyvelés</a></li>
+              <li><a class="hover:text-white" href="#">Üzleti tanácsadás</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Hasznos linkek</h3>
+            <ul class="mt-6 space-y-3 text-sm text-white/70">
+              <li><a class="hover:text-white" href="#">Rólunk</a></li>
+              <li><a class="hover:text-white" href="#">Szakértőink</a></li>
+              <li><a class="hover:text-white" href="#">Karrier</a></li>
+              <li><a class="hover:text-white" href="#">Dokumentumtár</a></li>
+              <li><a class="hover:text-white" href="#">Adatkezelési tájékoztató</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-sm font-extrabold uppercase tracking-[0.18em] text-white">Kapcsolat</h3>
+            <ul class="mt-6 space-y-4 text-sm text-white/70">
+              <li class="flex items-start gap-3">
+                <span class="material-icons-outlined text-brand-red">location_on</span>
+                <span>1136 Budapest Hollán Ernő utca 31 fszt 3.</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">phone</span>
+                <span>+36 30 731 3145  </span>
+              </li>
+              <li class="flex items-center gap-3">
+                <span class="material-icons-outlined text-brand-red">mail</span>
+                <span>info@ecovis-accounting.hu</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/60">
+          <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+            <p>© 2026 ECOVIS Compliance Solution HUNGARY. Minden jog fenntartva.</p>
+            <div class="flex flex-wrap gap-x-6 gap-y-2">
+              <a class="hover:text-white" href="#">Impresszum</a>
+              <a class="hover:text-white" href="#">Adatvédelem</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
