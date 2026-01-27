@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Szakértőink – ECOVIS Compliance Solution Hungary</title>
+    <title>Szakértőink – ECOVIS Hungary</title>
 
     <!-- Corporate typography (Style guide: Noto Sans / Noto Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -141,10 +141,10 @@
       <div class="mx-auto max-w-7xl px-4 py-5 flex items-center justify-between gap-6">
         <!-- Brand -->
         <a class="flex items-center gap-3 min-w-0" href="#">
-          <div class="h-11 w-11 rounded bg-brand-red text-white grid place-items-center font-extrabold text-xl">E</div>
+          <div class="h-11 w-11 rounded-full bg-brand-red text-white grid place-items-center font-extrabold text-xl">E</div>
           <div class="min-w-0">
             <div class="text-lg sm:text-xl font-extrabold tracking-tight uppercase leading-none">
-              ECOVIS Compliance Solution <span class="font-light">HUNGARY</span>
+              ECOVIS <span class="font-light">HUNGARY</span>
             </div>
             <div class="mt-1 text-[10px] uppercase tracking-[0.18em] text-text-muted dark:text-text-muted-dark whitespace-nowrap">
               the lawyer • the tax adviser • the auditor • the accountant
