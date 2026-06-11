@@ -21,3 +21,4 @@ jobs:
         server-dir: /public_html/
         passive: true
         security: ftps
+        debug: true
