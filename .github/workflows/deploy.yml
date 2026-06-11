@@ -1,31 +1,21 @@
-name: Deploy to Tarhely.eu
-on:
-  push:
-    branches:
-      - master
+# name: Deploy to Tarhely.eu
+# on:
+#   push:
+#     branches:
+#       - master
 
-jobs:
-  web-deploy:
-    name: Deploy
-    runs-on: ubuntu-latest
-    steps:
-    - name: Get latest code
-      uses: actions/checkout@v3
+# jobs:
+#   web-deploy:
+#     name: Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Get latest code
+#       uses: actions/checkout@v3
 
-    - name: Deploy to Tarhely.eu (Fixed SSL)
-      run: |
-        sudo apt-get update && sudo apt-get install lftp -y
-        
-        lftp -p 21 -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
-        # Crucial: Allow SSL, but do NOT verify the certificate
-        set ftp:ssl-allow yes
-        set ssl:verify-certificate no
-        
-        set ftp:passive-mode on
-        set net:timeout 15
-        
-        # Now try to list and sync
-        ls
-        mirror -R --verbose=3 --no-symlinks ./ public_html/
-        quit
-        EOF
+#     - name: Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+#       with:
+#         server: ${{ secrets.FTP_SERVER }}
+#         username: ${{ secrets.FTP_USERNAME }}
+#         password: ${{ secrets.FTP_PASSWORD }}
+#         server-dir: public_html/
