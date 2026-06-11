@@ -12,14 +12,21 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Deploy to Tarhely.eu (Fixed Path)
+    - name: Deploy to Tarhely.eu
       run: |
+        # 1. Update package list and install lftp
+        sudo apt-get update
+        sudo apt-get install lftp -y
+        
+        # 2. Run the deployment
         lftp -p 21 -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
         set ftp:ssl-allow no
         set ftp:passive-mode on
         set net:max-retries 2
         set net:timeout 10
-        # A '.' azt jelenti: a jelenlegi mappa, amibe bejelentkeztünk
-        mirror -R --verbose=3 --no-symlinks ./ .
+        # Use 'ls' first to check where you are landing
+        ls
+        # Attempt to mirror to public_html/ (ensure this folder exists)
+        mirror -R --verbose=3 --no-symlinks ./ public_html/
         quit
         EOF
