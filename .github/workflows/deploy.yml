@@ -12,22 +12,22 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Deploy to Tarhely.eu
+    - name: Debug and Deploy
       run: |
         sudo apt-get update && sudo apt-get install lftp -y
         
         lftp -p 21 -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
         set ftp:ssl-allow no
         set ftp:passive-mode on
-        set net:timeout 30
-        set net:max-retries 5
-        set net:persist-retries 10
         
-        # Navigate explicitly
-        cd public_html/
+        # 1. Print the current directory the server put us in
+        pwd
         
-        # Disable smart-mirroring and force upload all
-        mirror -R --verbose=3 --no-symlinks --no-empty-dirs ./ .
+        # 2. List everything we can see
+        ls
+        
+        # 3. Try to upload one single file to test permission
+        put todo.md
         
         quit
         EOF
