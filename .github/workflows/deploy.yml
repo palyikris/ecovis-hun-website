@@ -27,6 +27,6 @@ jobs:
         # Use 'ls' first to check where you are landing
         ls
         # Attempt to mirror to public_html/ (ensure this folder exists)
-        mirror -R --verbose=3 --no-symlinks ./ public_html/
+        mirror -R --verbose=3 --no-symlinks /home/ecovisac/public_html/
         quit
         EOF
