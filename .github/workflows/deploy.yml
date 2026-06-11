@@ -12,14 +12,14 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Deploy to Tarhely.eu
-      uses: airvzxf/ftp-deployment-action@latest
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local_dir: "./"
-        remote_dir: "public_html/" # Try relative path first
-        port: 21 # Explicitly set the port
-        ftp_passive_mode: true
-        ftp_ssl_allow: false # Often needed if the server rejects secure handshakes
+    - name: Deploy to Tarhely.eu (Manual lftp)
+      run: |
+        sudo apt-get update && sudo apt-get install lftp -y
+        lftp -p 21 -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
+        set ftp:ssl-allow no
+        set ftp:passive-mode on
+        set net:max-retries 2
+        set net:timeout 10
+        mirror -R --verbose=3 --no-symlinks ./ public_html/
+        quit
+        EOF
