@@ -12,13 +12,12 @@ jobs:
     - name: Get latest code
       uses: actions/checkout@v3
 
-    - name: Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: Deploy via lftp
+      uses: airvzxf/ftp-deployment-action@latest
       with:
         server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
+        user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /public_html/
-        passive: true
-        security: strict
-        debug: true
+        local_dir: "./"
+        remote_dir: "/public_html/"
+        ftp_passive_mode: true
