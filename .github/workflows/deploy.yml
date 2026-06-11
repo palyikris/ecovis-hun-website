@@ -14,15 +14,20 @@ jobs:
 
     - name: Deploy to Tarhely.eu
       run: |
-        sudo apt-get update
-        sudo apt-get install lftp -y
+        sudo apt-get update && sudo apt-get install lftp -y
         
         lftp -p 21 -u "${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }}" "${{ secrets.FTP_SERVER }}" <<EOF
         set ftp:ssl-allow no
         set ftp:passive-mode on
-        set net:max-retries 2
-        set net:timeout 10
-        # This will explicitly copy files into the public_html folder
-        mirror -R --verbose=3 --no-symlinks ./ public_html/
+        set net:timeout 30
+        set net:max-retries 5
+        set net:persist-retries 10
+        
+        # Navigate explicitly
+        cd public_html/
+        
+        # Disable smart-mirroring and force upload all
+        mirror -R --verbose=3 --no-symlinks --no-empty-dirs ./ .
+        
         quit
         EOF
